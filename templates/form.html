@@ -1,0 +1,57 @@
+<form action="{{ url_for('predictFwi') }}" method="post">
+  <label for="Temperature">Temperature:</label>
+  <input
+    type="number"
+    step="any"
+    name="Temperature"
+    id="Temperature"
+    required
+  />
+  <br /><br />
+
+  <label for="RH">RH:</label>
+  <input type="number" step="any" name="RH" id="RH" required />
+  <br /><br />
+
+  <label for="Ws">Ws:</label>
+  <input type="number" step="any" name="Ws" id="Ws" required />
+  <br /><br />
+
+  <label for="Rain">Rain:</label>
+  <input type="number" step="any" name="Rain" id="Rain" required />
+  <br /><br />
+
+  <label for="FFMC">FFMC:</label>
+  <input type="number" step="any" name="FFMC" id="FFMC" required />
+  <br /><br />
+
+  <label for="DMC">DMC:</label>
+  <input type="number" step="any" name="DMC" id="DMC" required />
+  <br /><br />
+
+  <label for="DC">DC:</label>
+  <input type="number" step="any" name="DC" id="DC" required />
+  <br /><br />
+
+  <label for="ISI">ISI:</label>
+  <input type="number" step="any" name="ISI" id="ISI" required />
+  <br /><br />
+
+  <label for="BUI">BUI:</label>
+  <input type="number" step="any" name="BUI" id="BUI" required />
+  <br /><br />
+
+  <label for="Classes">Classes:</label>
+  <input type="text" name="Classes" id="Classes" required />
+  <br /><br />
+
+  <label for="Region">Region:</label>
+  <input type="number" name="Region" id="Region" required />
+  <br /><br />
+
+  <button type="submit">Predict FWI</button>
+</form>
+
+{% if prediction is not none %}
+<h3>Predicted FWI: {{ prediction }}</h3>
+{% endif %}
